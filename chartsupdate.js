@@ -101,7 +101,7 @@ function buildCharts(sample) {
 
     // 1. Create the trace for the bubble chart.
     var bubbleData = [{
-      x: out_ids,
+      x: otu_ids,
       y: sample_values,
       text: otu_labels,
       mode: "markers",
@@ -121,7 +121,7 @@ function buildCharts(sample) {
     };
 
     // 3. Use Plotly to plot the data with the layout.
-    Plotly.newPlot("bar", bubbleData, bubbleLayout); 
+    Plotly.newPlot("bubble", bubbleData, bubbleLayout); 
 
 
 
@@ -131,7 +131,7 @@ function buildCharts(sample) {
     // Create a variable that filters the samples for the object with the desired sample number.
 
     // 1. Create a variable that filters the metadata array for the object with the desired sample number.
-    
+    var metadata = data.metadata;
     var gaugeData = metadata.filter(metaObj => metaObj.id == sample);
     
 
